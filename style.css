@@ -80,12 +80,12 @@ body {
 
 /* Pages */
 .page {
-    min-height: 100vh;
+    height: 100vh;
     display: none;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 40px 20px;
+    padding: 20px 15px;
     overflow: hidden;
 }
 
@@ -143,12 +143,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
 }
 
 /* Couple Info Sections */
 .couple-info {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .groom-info {
@@ -183,24 +183,24 @@ body {
 
 /* Couple Names */
 .couple-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary-color);
     margin: 0;
     font-weight: 400;
     letter-spacing: 2px;
     font-family: 'Great Vibes', cursive;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 /* Parent Names */
 .parent-name {
-    font-size: 0.85rem;
-    color: var(--secondary-color);
+    font-size: 0.95rem;
+    color: var(--primary-color);
     margin: 5px 0 0 0;
     font-style: italic;
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: 0.5px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.4;
 }
 
@@ -222,8 +222,8 @@ body {
 /* Navigation Buttons */
 .next-btn,
 .prev-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
+    padding: 10px 25px;
+    font-size: 0.95rem;
     font-family: 'Cormorant Garamond', serif;
     background: var(--primary-color);
     color: white;
@@ -232,8 +232,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
-    margin-top: 30px;
-    margin: 15px;
+    margin: 8px;
     box-shadow: 0 4px 15px rgba(139, 90, 142, 0.3);
 }
 
@@ -249,8 +248,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-top: 30px;
+    gap: 5px;
+    margin-top: 15px;
     flex-wrap: wrap;
 }
 
@@ -273,14 +272,14 @@ body {
 }
 
 .welcome-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--secondary-color);
     font-style: italic;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .heart-animation {
-    font-size: 3rem;
+    font-size: 2.2rem;
     animation: heartbeat 1.5s ease-in-out infinite;
     display: inline-block;
 }
@@ -364,24 +363,30 @@ body {
 }
 
 .couple-names {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-top: 20px;
-    font-weight: 300;
+    font-weight: 400;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 1px;
+    color: var(--primary-color);
 }
 
 .groom {
     color: var(--primary-color);
-    margin: 0 15px;
+    margin: 0 12px;
+    font-style: italic;
 }
 
 .to {
     color: var(--gold);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 .bride {
     color: var(--primary-color);
-    margin: 0 15px;
+    margin: 0 12px;
+    font-style: italic;
 }
 
 /* Page 3 - Venue */
@@ -398,24 +403,19 @@ body {
 .venue-title {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 30px;
     font-weight: 300;
     font-family: 'Great Vibes', cursive;
 }
 
-.venue-title-hi {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
 .venue-card {
     background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(139, 90, 142, 0.2);
     border-top: 3px solid var(--gold);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .venue-icon {
@@ -426,21 +426,20 @@ body {
 .venue-name {
     font-size: 1.8rem;
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 400;
 }
 
-.venue-address-hi {
-    font-size: 1.2rem;
+.venue-address {
+    font-size: 1.1rem;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-style: italic;
 }
 
-.venue-details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 30px 0;
+.venue-schedule {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .detail-item {
@@ -511,82 +510,75 @@ body {
 .scratch-title {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 5px;
-    font-weight: 300;
-    font-family: 'Great Vibes', cursive;
-}
-
-.scratch-title-hi {
-    font-size: 2rem;
-    color: var(--secondary-color);
     margin-bottom: 30px;
     font-weight: 300;
+    font-family: 'Great Vibes', cursive;
 }
 
 .scratch-instruction {
     font-size: 1.1rem;
     color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-.scratch-instruction-hi {
-    font-size: 1rem;
-    color: var(--secondary-color);
     margin-bottom: 30px;
 }
 
-.scratch-card {
-    position: relative;
+/* Flip Card Styles */
+.flip-card {
     width: 350px;
-    height: 250px;
-    margin: 30px auto;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(139, 90, 142, 0.3);
-    cursor: crosshair;
+    height: 220px;
+    margin: 20px auto;
+    cursor: pointer;
+    perspective: 1000px;
 }
 
-.scratch-hidden {
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    z-index: 100;
     border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(139, 90, 142, 0.3);
 }
 
-#scratchCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 15px;
-    z-index: 101;
-    cursor: crosshair;
+.flip-card-front {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #FFE4E1, #FFB6C1);
+    transform: rotateY(180deg);
 }
 
 .revealed-date {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: linear-gradient(135deg, #FFE4E1, #FFB6C1);
-    border-radius: 15px;
-    z-index: 99;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
 
 .date-box {
     text-align: center;
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -594,35 +586,36 @@ body {
 }
 
 .date-day {
-    font-size: 3rem;
+    font-size: 2.8rem;
     color: var(--primary-color);
     font-weight: bold;
     line-height: 1;
 }
 
 .date-month {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .date-year {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 5px;
+}
+
+.date-label {
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+    margin-top: 3px;
+    font-style: italic;
 }
 
 .thank-you {
     font-size: 1.2rem;
     color: var(--text-color);
-    margin-top: 30px;
-}
-
-.thank-you-hi {
-    font-size: 1rem;
-    color: var(--secondary-color);
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 /* Floral Decorations */
@@ -662,37 +655,32 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* Footer */
-.footer {
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
+    .page {
+        padding: 15px 12px;
+    }
+
     .couple-cartoon {
-        width: 250px;
-        height: 200px;
+        width: 220px;
+        height: 180px;
         opacity: 0.1;
     }
 
     .couple-name {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .parent-name {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .welcome-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .heart-animation {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .invitation-title {
@@ -709,31 +697,28 @@ body {
 
     .venue-card {
         padding: 20px;
+        max-width: 400px;
     }
 
     .venue-name {
         font-size: 1.3rem;
     }
 
-    .venue-details-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .scratch-card {
+    .flip-card {
         width: 300px;
-        height: 220px;
+        height: 200px;
     }
 
     .date-day {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     .date-month {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .date-year {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .floral-decoration {
@@ -743,32 +728,41 @@ body {
 
 @media (max-width: 480px) {
     .page {
-        padding: 20px 10px;
+        padding: 10px 8px;
+        height: 100vh;
     }
 
     .couple-cartoon {
-        width: 200px;
-        height: 150px;
+        width: 150px;
+        height: 120px;
         opacity: 0.08;
     }
 
     .couple-name {
-        font-size: 1.4rem;
-        margin: 8px 0;
+        font-size: 1.2rem;
+        margin: 3px 0;
     }
 
     .parent-name {
-        font-size: 0.7rem;
-        line-height: 1.3;
+        font-size: 0.72rem;
+        line-height: 1.2;
     }
 
     .welcome-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
     }
 
     .heart-animation {
-        font-size: 1.8rem;
-        margin: 8px 0;
+        font-size: 1.5rem;
+        margin: 3px 0;
+    }
+
+    .next-btn,
+    .prev-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+        margin: 4px;
     }
 
     .invitation-content {
@@ -776,16 +770,16 @@ body {
     }
 
     .invitation-quote {
-        padding: 20px;
+        padding: 15px;
     }
 
     .quote-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .scratch-card {
-        width: 280px;
-        height: 200px;
+        width: 260px;
+        height: 180px;
     }
 
     .music-toggle {
