@@ -1,0 +1,15 @@
+<!-- Alternative approach: Embedded audio using a simple generated tone -->
+<!-- This is a note: To use real music, download a wedding instrumental MP3 and name it "wedding-music.mp3" -->
+
+This file acts as a placeholder. Replace it with a real wedding music MP3 file.
+
+You can:
+1. Download royalty-free wedding music from:
+   - Pixabay (pixabay.com/music)
+   - YouTube Audio Library
+   - Bensound
+   
+2. Name the file: wedding-music.mp3
+3. Place it in the same folder as index.html
+
+The website is already configured to play "wedding-music.mp3" automatically when the page loads.

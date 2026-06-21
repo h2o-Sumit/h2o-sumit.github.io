@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit & Sonam - Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="wedding-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <!-- <div class="music-toggle" id="musicToggle">
+        <span>🔊</span>-->
+    </div>
+
+    <!-- Page Counter -->
+   
+
+    <!-- Page 1: Welcome Page -->
+    <section class="page page-1 active">
+        <!-- Couple Cartoon Background -->
+        <div class="couple-cartoon">
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Groom -->
+                <circle cx="120" cy="80" r="25" fill="#f4a460"/>
+                <path d="M 100 110 L 140 110 L 140 160 L 100 160 Z" fill="#1a1a2e"/>
+                <path d="M 100 160 L 95 190 L 110 190" stroke="#f4a460" stroke-width="4" fill="none"/>
+                <path d="M 140 160 L 145 190 L 130 190" stroke="#f4a460" stroke-width="4" fill="none"/>
+                
+                <!-- Bride -->
+                <circle cx="280" cy="80" r="25" fill="#f4a460"/>
+                <path d="M 260 110 L 300 110 L 300 160 L 260 160 Z" fill="#ff69b4"/>
+                <path d="M 260 160 L 255 190 L 270 190" stroke="#f4a460" stroke-width="4" fill="none"/>
+                <path d="M 300 160 L 305 190 L 290 190" stroke="#f4a460" stroke-width="4" fill="none"/>
+                
+                <!-- Holding Hands -->
+                <line x1="140" y1="130" x2="260" y2="130" stroke="#d4af37" stroke-width="3"/>
+                <circle cx="200" cy="130" r="5" fill="#d4af37"/>
+            </svg>
+        </div>
+
+        <div class="floral-decoration floral-top-left">🌸</div>
+        <div class="floral-decoration floral-top-right">🌺</div>
+        <div class="floral-decoration floral-bottom-left">🌼</div>
+        <div class="floral-decoration floral-bottom-right">🌻</div>
+        
+        <div class="welcome-content">
+            <div class="welcome-text">
+                <!-- Groom Info -->
+                <div class="couple-info groom-info">
+                    <h1 class="couple-name">Sumit Chouhan</h1>
+                    <p class="parent-name">S/O - Gopal Chouhan & Pushpa Devi</p>
+                </div>
+                
+                <!-- Heart Divider -->
+                <div class="heart-animation">💕</div>
+                
+                <!-- Bride Info -->
+                <div class="couple-info bride-info">
+                    <h1 class="couple-name">Sonam Kumari</h1>
+                    <p class="parent-name">D/O - xyz Chouhan & abc Devi</p>
+                </div>
+                
+                <p class="welcome-subtitle">Together Forever</p>
+            </div>
+            <button class="next-btn" onclick="goToNextPage()">Next →</button>
+        </div>
+    </section>
+
+    <!-- Page 2: Invitation Quote -->
+    <section class="page page-2">
+        <div class="floral-decoration floral-top-left">🌷</div>
+        <div class="floral-decoration floral-top-right">🌹</div>
+        <div class="floral-decoration floral-bottom-left">🥀</div>
+        <div class="floral-decoration floral-bottom-right">🏵️</div>
+        
+        <div class="invitation-content">
+            <h2 class="invitation-title">आप का स्वागत है</h2>
+            <p class="invitation-title-en">You are Invited</p>
+            
+            <div class="invitation-quote">
+                <p class="quote-text">
+                    "Love is not just about finding the right person, it's about being the right person for someone."
+                </p>
+                <p class="quote-text-hi">
+                    "प्रेम केवल सही व्यक्ति को ढूंढना नहीं है, बल्कि किसी के लिए सही व्यक्ति होना है।"
+                </p>
+            </div>
+
+            <div class="names-section">
+                <p class="invitation-text-en">Request the honour of your presence at the marriage of</p>
+                <p class="invitation-text-hi">आपकी मौजूदगी का सम्मान करने के लिए निमंत्रण</p>
+                
+                <h3 class="couple-names">
+                    <span class="groom">Sumit</span>
+                    <span class="to">&</span>
+                    <span class="bride">Sonam</span>
+                </h3>
+            </div>
+
+            <div class="button-group">
+                <button class="prev-btn" onclick="goToPrevPage()">← Back</button>
+                <button class="next-btn" onclick="goToNextPage()">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Venue Details -->
+    <section class="page page-3">
+        <div class="floral-decoration floral-top-left">🌸</div>
+        <div class="floral-decoration floral-top-right">🌺</div>
+        <div class="floral-decoration floral-bottom-left">🌼</div>
+        <div class="floral-decoration floral-bottom-right">🌻</div>
+        
+        <div class="venue-content">
+            <h2 class="venue-title">Venue Details</h2>
+            <h2 class="venue-title-hi">स्थान विवरण</h2>
+            
+            <div class="venue-card">
+                <div class="venue-icon">📍</div>
+                <h3 class="venue-name">WM 129, New Miners</h3>
+                <p class="venue-address-hi">न्यू माइनर्स, गोमिया, बोकारो</p>
+                
+                <div class="venue-details-grid">
+                    <div class="detail-item">
+                        <span class="detail-icon">🏛️</span>
+                        <p class="detail-text-hi">Swang</p>
+                        <p class="detail-text">Gomia</p>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🗺️</span>
+                        <p class="detail-text">Bokaro</p>
+                        <p class="detail-text-hi">बोकारो</p>
+                    </div>
+                </div>
+
+                <div class="venue-info">
+                    <h4 class="info-title">Celebration Schedule</h4>
+                    <h4 class="info-title-hi">समारोह का समय</h4>
+                    <ul class="info-list">
+                        <li>
+                            <strong>Ceremony:</strong>
+                            <span>5:00 PM onwards</span>
+                        </li>
+                        <li>
+                            <strong>समारोह:</strong>
+                            <span>शाम 5:00 बजे से</span>
+                        </li>
+                        <li>
+                            <strong>Reception:</strong>
+                            <span>Dinner & Celebration</span>
+                        </li>
+                        <li>
+                            <strong>रिसेप्शन:</strong>
+                            <span>भोजन और उत्सव</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="prev-btn" onclick="goToPrevPage()">← Back</button>
+                <button class="next-btn" onclick="goToNextPage()">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 4: Scratch Date Reveal -->
+    <section class="page page-4">
+        <div class="floral-decoration floral-top-left">🌷</div>
+        <div class="floral-decoration floral-top-right">🌹</div>
+        <div class="floral-decoration floral-bottom-left">🥀</div>
+        <div class="floral-decoration floral-bottom-right">🏵️</div>
+        
+        <div class="scratch-content">
+            <h2 class="scratch-title">Save The Date!</h2>
+            <h2 class="scratch-title-hi">तारीख को नोट करें!</h2>
+            
+            <p class="scratch-instruction">✨ Scratch to reveal the wedding date ✨</p>
+            <p class="scratch-instruction-hi">✨ विवाह की तारीख जानने के लिए खरोंच करें ✨</p>
+            
+            <div class="scratch-card">
+                <div class="scratch-hidden">SCRATCH HERE</div>
+                <canvas id="scratchCanvas"></canvas>
+                <div class="revealed-date">
+                    <div class="date-box">
+                        <span class="date-day">25</span>
+                    </div>
+                    <div class="date-box">
+                        <span class="date-month">November</span>
+                    </div>
+                    <div class="date-box">
+                        <span class="date-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="thank-you">Thank you for being a part of our special day!</p>
+            <p class="thank-you-hi">हमारे विशेष दिन का हिस्सा बनने के लिए धन्यवाद!</p>
+
+            <div class="button-group">
+                <button class="prev-btn" onclick="goToPrevPage()">← Back</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Sumit & Sonam. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

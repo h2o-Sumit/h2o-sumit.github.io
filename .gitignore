@@ -1,0 +1,13 @@
+# Ignore music files (can be large)
+wedding-music.mp3
+*.mp3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,803 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #8B5A8E;
+    --secondary-color: #D4A5D4;
+    --accent-color: #E8C5E8;
+    --text-color: #333;
+    --light-bg: #FFF5F7;
+    --gold: #D4AF37;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background: linear-gradient(135deg, #FFF5F7 0%, #FCE4EC 100%);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Music Toggle */
+.music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 90, 142, 0.3);
+}
+
+.music-toggle:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.music-toggle.muted {
+    opacity: 0.6;
+}
+
+.music-toggle.muted span::after {
+    content: '❌';
+    position: absolute;
+    font-size: 20px;
+}
+
+/* Page Counter */
+.page-counter {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--primary-color);
+    z-index: 1000;
+}
+
+/* Pages */
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Page 1 - Welcome */
+.page-1 {
+    background: linear-gradient(135deg, #FFF5F7 0%, #FCE4EC 50%, #F8BBD0 100%);
+    position: relative;
+}
+
+/* Couple Cartoon SVG */
+.couple-cartoon {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    opacity: 0.15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.couple-cartoon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 2px rgba(139, 90, 142, 0.2));
+}
+
+/* Welcome Content */
+.welcome-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1s ease-out;
+    z-index: 10;
+    position: relative;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Couple Info Sections */
+.couple-info {
+    margin: 10px 0;
+}
+
+.groom-info {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.bride-info {
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Couple Names */
+.couple-name {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-family: 'Great Vibes', cursive;
+    line-height: 1.2;
+}
+
+/* Parent Names */
+.parent-name {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin: 5px 0 0 0;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/* Page 2 - Invitation */
+.page-2 {
+    background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 50%, #FFF5F7 100%);
+}
+
+/* Page 3 - Venue */
+.page-3 {
+    background: linear-gradient(135deg, #FFF5F7 0%, #FCE4EC 50%, #F8BBD0 100%);
+}
+
+/* Page 4 - Scratch */
+.page-4 {
+    background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 50%, #FFF5F7 100%);
+}
+
+/* Navigation Buttons */
+.next-btn,
+.prev-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: 30px;
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(139, 90, 142, 0.3);
+}
+
+.next-btn:hover,
+.prev-btn:hover {
+    background: transparent;
+    color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(139, 90, 142, 0.4);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.welcome-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.welcome-text h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Great Vibes', cursive;
+}
+
+.welcome-subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.heart-animation {
+    font-size: 3rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page 2 - Invitation */
+.page-2 {
+    background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 50%, #FFF5F7 100%);
+}
+
+.invitation-content {
+    text-align: center;
+    max-width: 700px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.invitation-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-family: 'Great Vibes', cursive;
+}
+
+.invitation-title-en {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+}
+
+.invitation-quote {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 8px 20px rgba(139, 90, 142, 0.15);
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.quote-text-hi {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.names-section {
+    margin-top: 30px;
+}
+
+.invitation-text-en,
+.invitation-text-hi {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.couple-names {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.groom {
+    color: var(--primary-color);
+    margin: 0 15px;
+}
+
+.to {
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.bride {
+    color: var(--primary-color);
+    margin: 0 15px;
+}
+
+/* Page 3 - Venue */
+.page-3 {
+    background: linear-gradient(135deg, #FFF5F7 0%, #FCE4EC 50%, #F8BBD0 100%);
+}
+
+.venue-content {
+    text-align: center;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.venue-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-family: 'Great Vibes', cursive;
+}
+
+.venue-title-hi {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.venue-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(139, 90, 142, 0.2);
+    border-top: 3px solid var(--gold);
+}
+
+.venue-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.venue-name {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.venue-address-hi {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.venue-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.detail-item {
+    padding: 20px;
+    background: linear-gradient(135deg, var(--light-bg), var(--accent-color));
+    border-radius: 10px;
+}
+
+.detail-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.detail-text,
+.detail-text-hi {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.venue-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.info-title-hi {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.info-list {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+}
+
+.info-list li {
+    padding: 10px 20px;
+    border-bottom: 1px dotted var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list strong {
+    color: var(--primary-color);
+}
+
+/* Page 4 - Scratch */
+.page-4 {
+    background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 50%, #FFF5F7 100%);
+}
+
+.scratch-content {
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.scratch-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-family: 'Great Vibes', cursive;
+}
+
+.scratch-title-hi {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.scratch-instruction {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.scratch-instruction-hi {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.scratch-card {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    margin: 30px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(139, 90, 142, 0.3);
+    cursor: crosshair;
+}
+
+.scratch-hidden {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 100;
+    border-radius: 15px;
+}
+
+#scratchCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    z-index: 101;
+    cursor: crosshair;
+}
+
+.revealed-date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #FFE4E1, #FFB6C1);
+    border-radius: 15px;
+    z-index: 99;
+}
+
+.date-box {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-day {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.date-year {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.thank-you {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 30px;
+}
+
+.thank-you-hi {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+/* Floral Decorations */
+.floral-decoration {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floral-top-left {
+    top: 20px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.floral-top-right {
+    top: 20px;
+    right: 20px;
+    animation-delay: 1s;
+}
+
+.floral-bottom-left {
+    bottom: 20px;
+    left: 20px;
+    animation-delay: 2s;
+}
+
+.floral-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-cartoon {
+        width: 250px;
+        height: 200px;
+        opacity: 0.1;
+    }
+
+    .couple-name {
+        font-size: 1.8rem;
+    }
+
+    .parent-name {
+        font-size: 0.75rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .heart-animation {
+        font-size: 2rem;
+    }
+
+    .invitation-title {
+        font-size: 1.8rem;
+    }
+
+    .invitation-title-en {
+        font-size: 1.3rem;
+    }
+
+    .couple-names {
+        font-size: 1.5rem;
+    }
+
+    .venue-card {
+        padding: 20px;
+    }
+
+    .venue-name {
+        font-size: 1.3rem;
+    }
+
+    .venue-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scratch-card {
+        width: 300px;
+        height: 220px;
+    }
+
+    .date-day {
+        font-size: 2.5rem;
+    }
+
+    .date-month {
+        font-size: 1.2rem;
+    }
+
+    .date-year {
+        font-size: 1.5rem;
+    }
+
+    .floral-decoration {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 20px 10px;
+    }
+
+    .couple-cartoon {
+        width: 200px;
+        height: 150px;
+        opacity: 0.08;
+    }
+
+    .couple-name {
+        font-size: 1.4rem;
+        margin: 8px 0;
+    }
+
+    .parent-name {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+
+    .heart-animation {
+        font-size: 1.8rem;
+        margin: 8px 0;
+    }
+
+    .invitation-content {
+        max-width: 100%;
+    }
+
+    .invitation-quote {
+        padding: 20px;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .scratch-card {
+        width: 280px;
+        height: 200px;
+    }
+
+    .music-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .page-counter {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
