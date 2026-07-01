@@ -4,8 +4,11 @@ const totalPages = 4;
 
 // Update page counter
 function updatePageCounter() {
-    document.getElementById('currentPage').textContent = currentPage;
-    document.getElementById('totalPages').textContent = totalPages;
+    const currentPageElement = document.getElementById('currentPage');
+    const totalPagesElement = document.getElementById('totalPages');
+    if (currentPageElement) currentPageElement.textContent = currentPage;
+    if (totalPagesElement) totalPagesElement.textContent = totalPages;
+
 }
 
 // Go to specific page
@@ -45,35 +48,51 @@ function goToPrevPage() {
 // Music Toggle Functionality
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
-let isMusicPlaying = true;
+let isMusicPlaying = false;
 
-musicToggle.addEventListener('click', function() {
+function updateMusicButton(isPlaying) {
+    isMusicPlaying = isPlaying;
+    musicToggle.classList.toggle('muted', !isPlaying);
+    musicToggle.querySelector('span').textContent = isPlaying ? '🔊' : '🔇';
+    musicToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+    musicToggle.title = isPlaying ? 'Pause background music' : 'Play background music';
+}
+
+async function playMusic() {
+    try {
+        await bgMusic.play();
+        updateMusicButton(true);
+        return true;
+    } catch (error) {
+        updateMusicButton(false);
+        return false;
+    }
+}
+
+musicToggle.addEventListener('click', async function(event) {
+    event.stopPropagation();
     if (isMusicPlaying) {
         bgMusic.pause();
-        musicToggle.classList.add('muted');
-        musicToggle.innerHTML = '🔇';
+        updateMusicButton(false);
     } else {
-        bgMusic.play();
-        musicToggle.classList.remove('muted');
-        musicToggle.innerHTML = '🔊';
+        await playMusic();
     }
-    isMusicPlaying = !isMusicPlaying;
 });
 
+bgMusic.addEventListener('play', () => updateMusicButton(true));
+bgMusic.addEventListener('pause', () => updateMusicButton(false));
+bgMusic.addEventListener('error', () => updateMusicButton(false));
+
 // Auto-play music on load with user interaction fallback
-window.addEventListener('load', function() {
-    const playPromise = bgMusic.play();
-    if (playPromise !== undefined) {
-        playPromise.catch(function() {
-            // Autoplay failed - add click to unmute
-            document.body.addEventListener('click', function playOnClick() {
-                bgMusic.play();
-                musicToggle.classList.remove('muted');
-                musicToggle.innerHTML = '🔊';
-                isMusicPlaying = true;
-                document.body.removeEventListener('click', playOnClick);
-            }, { once: true });
-        });
+window.addEventListener('load', async function() {
+    // Browsers often block audible autoplay. Try it first, then use the first
+    // user interaction as the permitted playback gesture.
+    const startedAutomatically = await playMusic();
+    if (!startedAutomatically) {
+        document.addEventListener('pointerdown', async function playOnFirstInteraction(event) {
+            if (event.target.closest('#musicToggle')) return;
+            await playMusic();
+        }, { once: true });
     }
     updatePageCounter();
 });

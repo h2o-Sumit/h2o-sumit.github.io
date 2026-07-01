@@ -17,34 +17,17 @@
     </audio>
 
     <!-- Music Toggle Button -->
-    <div class="music-toggle" id="musicToggle">
-        <span>🔊</span>
-    </div>
+    <button class="music-toggle muted" id="musicToggle" type="button" aria-label="Play background music" title="Play background music">
+        <span aria-hidden="true">🔇</span>
+    </button>
 
     <!-- Page Counter -->
-   
 
     <!-- Page 1: Welcome Page -->
     <section class="page page-1 active">
-        <!-- Couple Cartoon Background -->
-        <div class="couple-cartoon">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                <!-- Groom -->
-                <circle cx="120" cy="80" r="25" fill="#f4a460"/>
-                <path d="M 100 110 L 140 110 L 140 160 L 100 160 Z" fill="#1a1a2e"/>
-                <path d="M 100 160 L 95 190 L 110 190" stroke="#f4a460" stroke-width="4" fill="none"/>
-                <path d="M 140 160 L 145 190 L 130 190" stroke="#f4a460" stroke-width="4" fill="none"/>
-                
-                <!-- Bride -->
-                <circle cx="280" cy="80" r="25" fill="#f4a460"/>
-                <path d="M 260 110 L 300 110 L 300 160 L 260 160 Z" fill="#ff69b4"/>
-                <path d="M 260 160 L 255 190 L 270 190" stroke="#f4a460" stroke-width="4" fill="none"/>
-                <path d="M 300 160 L 305 190 L 290 190" stroke="#f4a460" stroke-width="4" fill="none"/>
-                
-                <!-- Holding Hands -->
-                <line x1="140" y1="130" x2="260" y2="130" stroke="#d4af37" stroke-width="3"/>
-                <circle cx="200" cy="130" r="5" fill="#d4af37"/>
-            </svg>
+        <!-- Couple image: above the page background and below the text -->
+        <div class="couple-image" aria-hidden="true">
+            <img src="imgg.png" alt="">
         </div>
 
         <div class="floral-decoration floral-top-left">🌸</div>
@@ -133,7 +116,7 @@
                     <ul class="info-list">
                         <li>
                             <strong>Ceremony:</strong>
-                            <span>5:00 PM onwards</span>
+                            <span>8:00 PM onwards</span>
                         </li>
                         <li>
                             <strong>Reception:</strong>

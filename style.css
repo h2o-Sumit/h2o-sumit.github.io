@@ -42,6 +42,7 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(139, 90, 142, 0.3);
+    padding: 0;
 }
 
 .music-toggle:hover {
@@ -109,23 +110,26 @@ body {
     position: relative;
 }
 
-/* Couple Cartoon SVG */
-.couple-cartoon {
+/* First-page couple image layer */
+.couple-image {
     position: absolute;
-    width: 300px;
-    height: 250px;
-    opacity: 0.15;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+    inset: 0;
+    z-index: 1;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.couple-cartoon svg {
-    width: 100%;
+.couple-image img {
+    width: min(100%, 720px);
     height: 100%;
-    filter: drop-shadow(0 0 2px rgba(139, 90, 142, 0.2));
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.72;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 88%, transparent 100%);
 }
 
 /* Welcome Content */
@@ -184,24 +188,26 @@ body {
 /* Couple Names */
 .couple-name {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #58204f;
     margin: 0;
     font-weight: 400;
     letter-spacing: 2px;
     font-family: 'Great Vibes', cursive;
     line-height: 1.1;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 12px rgba(255, 245, 247, 0.85);
 }
 
 /* Parent Names */
 .parent-name {
     font-size: 0.95rem;
-    color: var(--primary-color);
+    color: #45203e;
     margin: 5px 0 0 0;
     font-style: italic;
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: 0.5px;
     font-weight: 400;
     line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 245, 247, 0.9);
 }
 
 /* Page 2 - Invitation */
@@ -263,19 +269,21 @@ body {
 
 .welcome-text h1 {
     font-size: 4rem;
-    color: var(--primary-color);
+    color: #58204f;
     margin-bottom: 10px;
     font-weight: 300;
     letter-spacing: 3px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 12px rgba(255, 245, 247, 0.85);
     font-family: 'Great Vibes', cursive;
 }
 
 .welcome-subtitle {
     font-size: 1.2rem;
-    color: var(--secondary-color);
+    color: #58204f;
     font-style: italic;
     margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 245, 247, 0.9);
 }
 
 .heart-animation {
@@ -661,10 +669,9 @@ body {
         padding: 15px 12px;
     }
 
-    .couple-cartoon {
-        width: 220px;
-        height: 180px;
-        opacity: 0.1;
+    .couple-image img {
+        width: 100%;
+        opacity: 0.62;
     }
 
     .couple-name {
@@ -732,10 +739,9 @@ body {
         height: 100vh;
     }
 
-    .couple-cartoon {
-        width: 150px;
-        height: 120px;
-        opacity: 0.08;
+    .couple-image img {
+        width: 100%;
+        opacity: 0.58;
     }
 
     .couple-name {
@@ -788,10 +794,5 @@ body {
         font-size: 18px;
     }
 
-    .page-counter {
-        width: 40px;
-        height: 40px;
-        font-size: 12px;
-    }
 }
 
